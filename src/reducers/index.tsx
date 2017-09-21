@@ -1,6 +1,6 @@
-import { EnthusiasmAction } from "../actions";
-import { StoreState } from "../types/index";
-import { INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM } from "../constants/index";
+import { EnthusiasmAction } from '../actions';
+import { StoreState } from '../types/index';
+import { INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM } from '../constants/index';
 export function enthusiasm(
   state: StoreState,
   action: EnthusiasmAction
@@ -13,6 +13,7 @@ export function enthusiasm(
         ...state,
         enthusiasmLevel: Math.max(1, state.enthusiasmLevel - 1)
       };
+    default:
+      return state;
   }
-  return state;
 }
